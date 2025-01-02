@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "module": "commonjs",
+        "target": "es2021",
+        "sourceMap": true,
+        "baseUrl": "./",
+        "paths": {
+            "@domain/*": ["src/domain/*"],
+            "@infra/*": ["src/infra/*"]
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["test/**/*", "node_modules", "dist", ".github", "husky", "coverage"]
+}

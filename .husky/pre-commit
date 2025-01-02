@@ -1,0 +1,12 @@
+#!/bin/bash
+
+COVERAGE_FILE="coverage/coverage-summary.json"
+
+# Lint 검사
+echo "🔍 Pre-commit Hook: Running lint checks..."
+if yarn lint-staged; then
+  echo "✅ Lint checks passed."
+else
+  echo "❌ Lint checks failed. Aborting commit."
+  exit 1
+fi

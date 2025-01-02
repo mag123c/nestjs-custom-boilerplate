@@ -1,0 +1,22 @@
+echo "🔍 커밋 메시지 검사를 시작합니다..."
+
+# 커밋 메시지 파일 경로를 첫 번째 인자로 받음
+COMMIT_MESSAGE_FILE=$1
+
+# 커밋 메시지 파일이 없을 경우 경고 메시지 출력
+if [ -z "$COMMIT_MESSAGE_FILE" ]; then
+  echo "❌ 커밋 메시지 파일이 제공되지 않았습니다."
+  exit 1
+fi
+
+# 커밋 메시지 파일을 읽어옴
+COMMIT_MESSAGE=$(cat "$COMMIT_MESSAGE_FILE")
+echo "❤️‍🩹 Commit Message: $COMMIT_MESSAGE"
+
+# Commit message 검사 실행
+if npx commitlint --edit "$COMMIT_MESSAGE_FILE"; then
+  echo "🔆 Commit message meets the convention 🔆"
+else
+  echo "❌ Commit message does not meet the convention ❌"
+  exit 1
+fi
