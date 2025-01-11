@@ -19,7 +19,7 @@ export class LoggingManager {
 
     logRequest(method: string, url: string, duration: string, user: any) {
         WinstonLogger.log({
-            app: 'campable-equipments-api',
+            app: 'APP_NAME',
             env: process.env.NODE_ENV,
             level: 'info',
             message: `${method} ${url} ${duration}`,
@@ -49,7 +49,7 @@ export class LoggingManager {
         }
 
         WinstonLogger.warn({
-            app: 'campable-equipments-api',
+            app: 'APP_NAME',
             env: process.env.NODE_ENV,
             level: 'warn',
             message: `${context.method} ${context.url} ${context.duration} ${error.message}`,
@@ -65,7 +65,7 @@ export class LoggingManager {
 
     logError(error: any, context: LoggingContext, user?: any) {
         WinstonLogger.error({
-            app: 'campable-equipments-api',
+            app: 'APP_NAME',
             env: process.env.NODE_ENV,
             level: 'error',
             message: `${context.method} ${context.url} ${context.duration} ${error.message}`,

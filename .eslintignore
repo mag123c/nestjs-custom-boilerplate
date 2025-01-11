@@ -1,2 +1,9 @@
-.eslintrc.js
+./node_modules
+./dist
+./coverage
+./.husky
+./.github
+.*.js
 .prettierrc
+.ecosystem.config.js
+src/infra/database/

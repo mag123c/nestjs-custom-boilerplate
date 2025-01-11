@@ -1,9 +1,11 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        project: 'tsconfig.json',
+        project: ['./tsconfig.json'],
+        tsconfigRootDir: __dirname,
         sourceType: 'module',
     },
+    ignorePatterns: ['*.js'],
     plugins: ['@typescript-eslint/eslint-plugin', 'prettier'],
     extends: [
         'plugin:@typescript-eslint/recommended',
@@ -25,7 +27,7 @@ module.exports = {
             'error',
             {
                 printWidth: 120, // 코드 줄 길이
-                endOfLine: 'lf', // 줄바꿈 스타일: LF
+                endOfLine: 'auto', // 운영체제 기본 줄바꿈 스타일 사용
             },
         ], // 코드 포맷 강제
         '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }], // 사용하지 않는 변수 방지

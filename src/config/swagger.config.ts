@@ -6,10 +6,10 @@ import { isLocal } from '../common/util/env.util';
 
 export const swaggerConfig = () => {
     return new DocumentBuilder()
-        .setTitle('Campable Equipments API')
-        .setDescription('캠퍼블 장비관리 API')
-        .setVersion('alpha')
-        .addTag('equipments', '장비')
+        .setTitle('APP_NAME')
+        .setDescription('APP_NAME')
+        .setVersion('SETVERSION')
+        .addTag('APP_TAG')
         .addBearerAuth(
             {
                 type: 'http',
