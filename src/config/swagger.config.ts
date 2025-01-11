@@ -1,7 +1,7 @@
 import type { INestApplication } from '@nestjs/common';
 import type { SwaggerCustomOptions } from '@nestjs/swagger';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import * as expressBasicAuth from 'express-basic-auth';
+import expressBasicAuth from 'express-basic-auth';
 import { isLocal } from '../common/util/env.util';
 
 export const swaggerConfig = () => {
