@@ -1,5 +1,5 @@
 import type { INestApplication } from '@nestjs/common';
-import * as compression from 'compression';
+import compression from 'compression';
 import { setupCors } from './cors.config';
 import { setupPipe } from './global-pipe.config';
 import { setupSwagger } from './swagger.config';

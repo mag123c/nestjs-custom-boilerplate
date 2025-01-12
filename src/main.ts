@@ -1,9 +1,12 @@
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { initializeTransactionalContext, StorageDriver } from 'typeorm-transactional';
 import { AppModule } from './app/app.module';
 import { setupAppConfig } from './config/app-initialize.config';
 
 async function bootstrap() {
+    initializeTransactionalContext({ storageDriver: StorageDriver.AUTO });
+
     const logger = new Logger('Bootstrap');
     const app = await NestFactory.create(AppModule, {
         bufferLogs: true,
